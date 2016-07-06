@@ -48,6 +48,8 @@ public class KadminRequest extends HttpServlet {
 		kadminPrincipal = System.getProperty("kadminPrincipal");
 		kadminKeytab = System.getProperty("kadminKeytab");
 		ticketCache = System.getProperty("ticketCache");
+		System.setProperty("sun.net.spi.nameservice.nameservers", "192.168.1.1");
+		System.setProperty("sun.net.spi.nameservice.provider.1", "dns,sun");
 		Kinit kinit = new Kinit(kadminPrincipal, ticketCache, kadminKeytab);
 		Thread kinitThread = new Thread(kinit);
 		kinitThread.setDaemon(true);
@@ -79,8 +81,7 @@ public class KadminRequest extends HttpServlet {
 				if (!(doesPrincipalExist)) {
 					System.out.println(remote_host_clean+ " Principal Doesn't exist");
 					createPrincipalSuccess = kadmin.createPrincipal(principalIn, ticketCache);
-					System.out.println(remote_host_clean+ " Create Principal: "+createPrincipalSuccess);
-					if (createPrincipalSuccess) {
+					if (!(createPrincipalSuccess)) {
 						System.out.println(remote_host_clean+ " Creating Keytab");
 						createKeyTabSuccess = kadmin.createKeyTab(principalIn, ticketCache, keytabOutputPath);
 						System.out.println(remote_host_clean+ " KeyTab Creation Success: "+createKeyTabSuccess);
