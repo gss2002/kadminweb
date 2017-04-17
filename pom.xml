@@ -15,33 +15,49 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kadminweb</name>
 	<packaging>war</packaging>
+
+	<properties>
+		<app.home>/apps/adhelp/</app.home>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<install.user>root</install.user>
+		<java.version>1.8</java.version>
+		<junit.version>3.8.1</junit.version>
+		<json.version>20160212</json.version>
+		<log4j.version>1.2.17</log4j.version>
+		<adldap.version>1.0</adldap.version>
+		<kadminremote.version>0.0.1-SNAPSHOT</kadminremote.version>
+		<servlet-api.version>3.0.1</servlet-api.version>
+		<commons-codec.version>1.10</commons-codec.version>
+	</properties>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>${servlet-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20160212</version>
+			<version>${json.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.kerberos</groupId>
 			<artifactId>kadminremote</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${kadminremote.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.10</version>
+			<version>${commons-codec.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -73,8 +89,8 @@
 				<version>2.3.2</version>
 				<configuration>
 					<fork>true</fork>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
