@@ -12,20 +12,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.kerberos</groupId>
 	<artifactId>kadminweb</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>kadminweb</name>
 	<packaging>war</packaging>
 
 	<properties>
-		<app.home>/apps/adhelp/</app.home>
+		<app.home>/apps/kadmin_webapp/</app.home>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<install.user>root</install.user>
 		<java.version>1.8</java.version>
 		<junit.version>3.8.1</junit.version>
 		<json.version>20160212</json.version>
 		<log4j.version>1.2.17</log4j.version>
-		<adldap.version>1.0</adldap.version>
-		<kadminremote.version>0.0.1-SNAPSHOT</kadminremote.version>
+		<kadminremote.version>0.0.2-SNAPSHOT</kadminremote.version>
 		<servlet-api.version>3.0.1</servlet-api.version>
 		<commons-codec.version>1.10</commons-codec.version>
 	</properties>
